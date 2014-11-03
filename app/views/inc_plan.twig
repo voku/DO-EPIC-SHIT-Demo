@@ -1,0 +1,152 @@
+{% if plan %}
+  <div class="row">
+    <div class="my_planWrapper col-xs-12 col-sm-offset-4 col-sm-8">
+      <div class="row">
+        <div class="col-xs-3 my_planHeader my_plan1">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">05,00 €</div>
+          <div class="my_planDuration">(ohne Spende)</div>
+          <input name="plan[1]" value="{% if plan[0] == 1 %}{{ plan[1] }}{% endif %}" />
+        </div>
+        <div class="col-xs-3 my_planHeader my_plan2">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">10,00 €</div>
+          <div class="my_planDuration">(Spende: 5,00 €)</div>
+          <input name="plan[2]" value="{% if plan[0] == 2 %}{{ plan[1] }}{% endif %}" />
+        </div>
+        <div class="col-xs-3 my_planHeader my_plan3">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">12,50 €</div>
+          <div class="my_planDuration">(ohne Spende)</div>
+          <input name="plan[3]" value="{% if plan[0] == 3 %}{{ plan[1] }}{% endif %}" />
+        </div>
+        <div class="col-xs-3 my_planHeader my_plan4">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">17,50 €</div>
+          <div class="my_planDuration">(Spende: 5,00 €)</div>
+          <input name="plan[4]" value="{% if plan[0] == 4 %}{{ plan[1] }}{% endif %}" />
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="row">
+    <div class="my_planWrapper col-xs-12 col-sm-offset-4 col-sm-8">
+      <div class="row">
+        <div class="col-xs-3 my_planHeader my_plan1">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">05,00 €</div>
+          <div class="my_planDuration">(ohne Spende)</div>
+          <a href="/tickets/1/1" type="button" class="btn btn-default">Kaufen</a>
+        </div>
+        <div class="col-xs-3 my_planHeader my_plan2">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">10,00 €</div>
+          <div class="my_planDuration">(Spende: 5,00 €)</div>
+          <a href="/tickets/2/1" type="button" class="btn btn-default">Kaufen</a>
+        </div>
+        <div class="col-xs-3 my_planHeader my_plan3">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">12,50 €</div>
+          <div class="my_planDuration">(ohne Spende)</div>
+          <a href="/tickets/3/2" type="button" class="btn btn-default">Kaufen</a>
+        </div>
+        <div class="col-xs-3 my_planHeader my_plan4">
+          <div class="my_planTitle"></div>
+          <div class="my_planPrice">17,50 €</div>
+          <div class="my_planDuration">(Spende: 5,00 €)</div>
+          <a href="/tickets/4/1" type="button" class="btn btn-default">Kaufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="row my_featureRow">
+  <div class="col-xs-12 col-sm-4 my_feature">
+    08.11.2014 (Ticket für eine Person)
+  </div>
+  <div class="col-xs-12 col-sm-8 my_feature">
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan1">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan2">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan3">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan4">
+        <i class="fa fa-check my_check"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my_featureRow">
+  <div class="col-xs-12 col-sm-4 my_feature">
+    09.11.2014 (Ticket für eine Person)
+  </div>
+  <div class="col-xs-12 col-sm-8 my_feature">
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan1">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan2">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan3">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan4">
+        <i class="fa fa-check my_check"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my_featureRow">
+  <div class="col-xs-12 col-sm-4 my_feature">
+    Spende (5,00 €)
+  </div>
+  <div class="col-xs-12 col-sm-8 my_feature">
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan1">
+        <i class="fa"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan2">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan3">
+        <i class="fa"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan4">
+        <i class="fa fa-check my_check"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my_featureRow">
+  <div class="col-xs-12 col-sm-4 my_feature">
+    Tasse + kostenfrei Kaffee und Tee
+  </div>
+  <div class="col-xs-12 col-sm-8 my_feature">
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan1">
+        <i class="fa"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan2">
+        <i class="fa"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan3">
+        <i class="fa fa-check my_check"></i>
+      </div>
+      <div class="col-xs-3 col-sm-3 my_planFeature my_plan4">
+        <i class="fa fa-check my_check"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4 class="text-center">
+  Die Tickets beinhaltet einen kostenfreien Zugang zu der Ausstellung des LVR Rheinischen Industriemuseums.
+</h4>

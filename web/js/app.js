@@ -20,7 +20,7 @@ $(document).ready(function () {
   });
 
   // smooth scrolling for nav sections
-  nav.find('.navbar-nav li>a').click(function (e) {
+  $("body.tpl_index").find('.navbar-nav li>a').click(function (e) {
     e.preventDefault();
     var link = $(this).attr('href');
     var pos = $(link).offset().top + 20;

@@ -1,105 +1,119 @@
 {% extends 'tpl_base.twig' %}
 
 {% block content %}
-  <h1>Sign Up</h1>
+<div class="container">
+  <h1>Tickets bestellen</h1>
 
-  <form class="form-horizontal" action="/tickets" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="inputEmail">E-Mail:</label>
+  {% if flash.success %}
+    <h3>{{ flash.success }}</h3>
+  {% else %}
 
-      <div class="col-xs-9">
-        <input type="email" name="ticket[email]" class="form-control" id="inputEmail" placeholder="E-Mail">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="inputPassword">Passwort:</label>
+    {% if flash.error %}
+      <p class="error">{{ flash.error }}</p>
+    {% endif %}
 
-      <div class="col-xs-9">
-        <input type="password" name="ticket[password]" class="form-control" id="inputPassword" placeholder="Passwort">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="confirmPassword">Passwort (Wiederholen):</label>
+    {% include 'inc_plan.twig' %}
+    <br /><br />
 
-      <div class="col-xs-9">
-        <input type="password" name="ticket[repassword]" class="form-control" id="confirmPassword" placeholder="Passwort (Wiederholen)">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="firstName">First Name:</label>
+    <form class="form-horizontal" action="/tickets" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="inputEmail">E-Mail:</label>
 
-      <div class="col-xs-9">
-        <input type="text" name="ticket[firstname]" class="form-control" id="firstName" placeholder="Vorname">
+        <div class="col-xs-9">
+          <input type="email" name="ticket[email]" class="form-control" id="inputEmail" placeholder="E-Mail">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="lastName">Last Name:</label>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="inputPassword">Passwort:</label>
 
-      <div class="col-xs-9">
-        <input type="text" name="ticket[lastname]" class="form-control" id="lastName" placeholder="Nachname">
+        <div class="col-xs-9">
+          <input type="password" name="ticket[password]" class="form-control" id="inputPassword" placeholder="Passwort">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="phoneNumber">Tel.:</label>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="confirmPassword">Passwort (Wiederholen):</label>
 
-      <div class="col-xs-9">
-        <input type="tel" name="ticket[tel]" class="form-control" id="phoneNumber" placeholder="Tel.">
+        <div class="col-xs-9">
+          <input type="password" name="ticket[repassword]" class="form-control" id="confirmPassword" placeholder="Passwort (Wiederholen)">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3">Geburtsdatum:</label>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="firstName">First Name:</label>
 
-      <div class="col-xs-3">
-        <select class="form-control">
-          <option>Tag</option>
-        </select>
+        <div class="col-xs-9">
+          <input type="text" name="ticket[firstname]" class="form-control" id="firstName" placeholder="Vorname">
+        </div>
       </div>
-      <div class="col-xs-3">
-        <select class="form-control">
-          <option>Monat</option>
-        </select>
-      </div>
-      <div class="col-xs-3">
-        <select class="form-control">
-          <option>Jahr</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="postalAddress">Adresse:</label>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="lastName">Last Name:</label>
 
-      <div class="col-xs-9">
-        <textarea rows="3" class="form-control" name="ticket[address]" id="postalAddress" placeholder="Adresse"></textarea>
+        <div class="col-xs-9">
+          <input type="text" name="ticket[lastname]" class="form-control" id="lastName" placeholder="Nachname">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-xs-3" for="ZipCode">PLZ:</label>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="phoneNumber">Tel.:</label>
 
-      <div class="col-xs-9">
-        <input type="text" name="ticket[zip]" class="form-control" id="ZipCode" placeholder="PLZ">
+        <div class="col-xs-9">
+          <input type="tel" name="ticket[tel]" class="form-control" id="phoneNumber" placeholder="Tel.">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="col-xs-offset-3 col-xs-9">
-        <label class="checkbox-inline">
-          <input type="checkbox" value="news"> Send me latest news and updates.
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-xs-offset-3 col-xs-9">
-        <label class="checkbox-inline">
-          <input type="checkbox" value="agree"> I agree to the <a href="#">Terms and Conditions</a>.
-        </label>
-      </div>
-    </div>
-    <br>
+      <div class="form-group">
+        <label class="control-label col-xs-3">Geburtsdatum:</label>
 
-    <div class="form-group">
-      <div class="col-xs-offset-3 col-xs-9">
-        <input type="submit" class="btn btn-primary" value="Submit">
-        <input type="reset" class="btn btn-default" value="Reset">
+        <div class="col-xs-3">
+          <select class="form-control">
+            <option>Tag</option>
+          </select>
+        </div>
+        <div class="col-xs-3">
+          <select class="form-control">
+            <option>Monat</option>
+          </select>
+        </div>
+        <div class="col-xs-3">
+          <select class="form-control">
+            <option>Jahr</option>
+          </select>
+        </div>
       </div>
-    </div>
-  </form>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="postalAddress">Adresse:</label>
+
+        <div class="col-xs-9">
+          <textarea rows="3" class="form-control" name="ticket[address]" id="postalAddress" placeholder="Adresse"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-xs-3" for="ZipCode">PLZ:</label>
+
+        <div class="col-xs-9">
+          <input type="text" name="ticket[zip]" class="form-control" id="ZipCode" placeholder="PLZ">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+          <label class="checkbox-inline">
+            <input type="checkbox" value="news"> Send me latest news and updates.
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+          <label class="checkbox-inline">
+            <input type="checkbox" value="agree"> I agree to the <a href="#">Terms and Conditions</a>.
+          </label>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+          <input type="submit" class="btn btn-primary" value="Submit">
+          <input type="reset" class="btn btn-default" value="Reset">
+        </div>
+      </div>
+    </form>
+  {% endif %}
+</div>
 {% endblock %}

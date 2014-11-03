@@ -4644,7 +4644,7 @@ th.hidden-lg, td.hidden-lg {
 
 html, body {
   height: 100%;
-  font: normal 14px arial, sans-serif; }
+  font: normal 16px arial, sans-serif; }
 
 h1, h2, h3, h4 {
   font-family: 'Open Sans', serif;
@@ -4976,6 +4976,8 @@ section {
     @media (max-width: 400px) {
       .my_planHeader a {
         padding: 2px 3px; } }
+  .my_planHeader input {
+    max-width: 100%; }
 
 .my_planTitle {
   font-size: 2em;

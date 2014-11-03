@@ -10,7 +10,7 @@
 <head>
 {% block head %}
 
-  <titl></title>
+  <title></title>
 
   {% block head_meta %}
     <meta charset="utf-8">
@@ -20,8 +20,8 @@
 
   {# CSS #}
   {% block head_css %}
-    <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="css-min/app.css">
+    <link rel="stylesheet" href="/vendor/bower/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css-min/app.css">
   {% endblock %}
 
   {% flush %}
@@ -31,11 +31,11 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="vendor/bower/jquery/dist/jquery.min.js"><\/script>')</script>
 
-    <script src="js-min/plugins.js"></script>
-    <script src="js-min/app.js"></script>
+    <script src="/js-min/plugins.js"></script>
+    <script src="/js-min/app.js"></script>
 
     <!-- only for example-images -->
-    <script src="vendor/bower/bootstrap-sass/docs-assets/js/holder.js"></script>
+    <script src="/vendor/bower/bootstrap-sass/docs-assets/js/holder.js"></script>
 
     <!-- load web-fonts -->
     <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
@@ -55,7 +55,7 @@
 
   {% flush %}
 
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 {% endblock %}
 </head>
 <body id="page{{ page_id }}" class="{{ page_template }}">
@@ -69,7 +69,7 @@
       <div class="row">
         <div class="col-sm-12 clearfix">
           <h1>
-            <a href="./index.html" title="OpenRheinRuhr">OpenRheinRuhr</a>
+            <a href="/" title="OpenRheinRuhr">OpenRheinRuhr</a>
           </h1>
 
           <p class="lead">
@@ -78,13 +78,43 @@
 
           <h2>8. und 9. November 2014, Oberhausen</h2>
         </div>
-        <div class="col-sm-12">
-          <a class="btn btn-lg btn-primary" href="#section6" role="button">Tickets »</a>
-        </div>
+
+        {% if page_template == 'tpl_index' %}
+          <div class="col-sm-12">
+            <a class="btn btn-lg btn-primary" href="#section6" role="button">Tickets »</a>
+          </div>
+        {% endif %}
+
       </div>
 
     </div>
   </header>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-custom navbar-inverse navbar-static-top affix-top main-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <li {% if page_template == 'tpl_index' %}class="active"{% endif %}><a href="{% if page_template != 'tpl_index' %}/index.php{% endif %}#section1"><strong>Home</strong></a></li>
+          <li {% if page_template == 'tpl_concept' %}class="active"{% endif %}><a href="{% if page_template != 'tpl_index' %}/index.php{% endif %}#section2">Konzept</a></li>
+          <li {% if page_template == 'tpl_news' %}class="active"{% endif %}><a href="{% if page_template != 'tpl_index' %}/index.php{% endif %}#section3">News</a></li>
+          <li {% if page_template == 'tpl_location' %}class="active"{% endif %}><a href="{% if page_template != 'tpl_index' %}/index.php{% endif %}#section4">Location</a></li>
+          <li {% if page_template == 'tpl_tickets' %}class="active"{% endif %}><a href="{% if page_template != 'tpl_index' %}/index.php{% endif %}#section6">Tickets</a></li>
+          <li {% if page_template == 'tpl_contact' %}class="active"{% endif %}><a href="{% if page_template != 'tpl_index' %}/index.php{% endif %}#section5">Kontakt</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container -->
+  </div>
+  <!--/.navbar -->
 
   {% block content %}{% endblock %}
 

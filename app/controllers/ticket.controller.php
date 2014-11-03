@@ -9,15 +9,22 @@ $app->get(
     $data = array();
     $data['tickets'] = $tickets->getAll();
 
-    $app->render('tpl_buy_overview.twig', array('data' => $data));
+    $app->render('tpl_buy_overview.twig', array('page_template' => 'tpl_buy_overview', 'data' => $data));
   }
 )->name('tickets');
 
 $app->get(
   '/tickets', function () use ($app) {
-    $app->render('tpl_tickets.twig');
+    $app->render('tpl_tickets.twig', array('page_template' => 'tpl_tickets'));
   }
 )->name('tickets');
+
+
+$app->get(
+  '/tickets/:plan+', function ($plan) use ($app) {
+    $app->render('tpl_tickets.twig', array('page_template' => 'tpl_tickets', 'plan' => $plan));
+  }
+)->name('ticket_plan');
 
 // POST routes
 
@@ -43,7 +50,7 @@ $app->post(
     try {
       R::store($tickets);
       R::commit();
-      $app->flash('success', 'Nice to hear from you!');
+      $app->flash('success', 'Deine Bestellung wurde gespeichert!');
     }
     catch (Exception $e) {
       R::rollback();
