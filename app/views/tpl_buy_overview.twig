@@ -1,0 +1,7 @@
+{% extends 'tpl_base.twig' %}
+
+{% block content %}
+  {% for ticket in data['tickets'] %}
+    {{ ticket.email }}
+  {% endfor %}
+{% endblock %}

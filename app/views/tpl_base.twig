@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="de" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="de" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="de" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="de" itemscope itemtype="http://schema.org/WebPage"> <!--<![endif]-->
+<head>
+{% block head %}
+
+  <titl></title>
+
+  {% block head_meta %}
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  {% endblock %}
+
+  {# CSS #}
+  {% block head_css %}
+    <link rel="stylesheet" href="vendor/bower/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css-min/app.css">
+  {% endblock %}
+
+  {% flush %}
+
+  {# JavaScript #}
+  {% block head_js %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="vendor/bower/jquery/dist/jquery.min.js"><\/script>')</script>
+
+    <script src="js-min/plugins.js"></script>
+    <script src="js-min/app.js"></script>
+
+    <!-- only for example-images -->
+    <script src="vendor/bower/bootstrap-sass/docs-assets/js/holder.js"></script>
+
+    <!-- load web-fonts -->
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Open Sans']
+        }
+      });
+    </script>
+
+  {% endblock %}
+
+  {% flush %}
+
+  {{ plugin['in_header'] | raw }}
+
+  {% flush %}
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+{% endblock %}
+</head>
+<body id="page{{ page_id }}" class="{{ page_template }}">
+
+
+<!-- Wrap all page content here -->
+<div class="globalWrapper">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 clearfix">
+          <h1>
+            <a href="./index.html" title="OpenRheinRuhr">OpenRheinRuhr</a>
+          </h1>
+
+          <p class="lead">
+            { Messe + Konferenz zum Thema "Freie Software" und "Netzpolitik" }
+          </p>
+
+          <h2>8. und 9. November 2014, Oberhausen</h2>
+        </div>
+        <div class="col-sm-12">
+          <a class="btn btn-lg btn-primary" href="#section6" role="button">Tickets »</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+</div>
+<!--/wrap-->
+
+<div class="footer">
+  <div class="container">
+    <p class="text-muted">BY <a target="_blank" href="http://moelleken.org/">LARS MOELLEKEN</a> WITH <span class="font-color-red">❤</span> IN 2014</p>
+  </div>
+</div>
+
+<ul class="nav pull-right scroll-top">
+  <li><a href="./index.html" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul>
+
+{{ plugin['in_footer'] | raw }}
+
+{{ logger | raw }}
+
+</body>
+</html>

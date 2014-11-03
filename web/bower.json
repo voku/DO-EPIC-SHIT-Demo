@@ -1,0 +1,11 @@
+{
+  "name": "cms-theme",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "normalize-scss": "3.*",
+    "font-awesome": "4.0.*",
+    "bootstrap-sass": "3.*",
+    "jquery": "2.*"
+  }
+}
