@@ -84,7 +84,8 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         src: [
-          'vendor/bower/bootstrap-sass/dist/js/bootstrap.min.js'
+          'vendor/bower/bootstrap-sass/dist/js/bootstrap.min.js',
+          'vendor/bower/magnific-popup/dist/jquery.magnific-popup.min.js'
         ],
         dest: 'js/plugins.js'
       }
