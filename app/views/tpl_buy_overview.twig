@@ -1,7 +1,9 @@
 {% extends 'tpl_base.twig' %}
 
 {% block content %}
+  <ul>
   {% for ticket in data['tickets'] %}
-    {{ ticket.email }}
+    <li>{{ ticket.email }} | {{ ticket.lastname }} {{ ticket.firstname }}</li>
   {% endfor %}
+  </ul>
 {% endblock %}

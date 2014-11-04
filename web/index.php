@@ -1,9 +1,9 @@
 <?php
 /**
- * RedSlim (Slim + Twig + Redbean), a PHP micro framework
+ * DO-EPIC-SHIT-Demo (Slim + Twig + Redbean)
  *
- * @package  redslim
  * @author   Van Ting <vanting@gmail.com>
+ * @author   Lars Moelleken <lars@moelleken.org>
  */
 
 /*
@@ -16,7 +16,7 @@
  */
 error_reporting(E_ALL | E_STRICT);
 error_reporting(error_reporting() & ~E_NOTICE);       // ignore error notice of undefined variables
-date_default_timezone_set('Asia/Hong_Kong');
+date_default_timezone_set('Europe/Berlin');
 
 define('ROOT', dirname(__DIR__));
 
