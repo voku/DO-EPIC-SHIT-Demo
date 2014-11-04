@@ -135,9 +135,9 @@ module.exports = function(grunt) {
     dalek: {
       options: {
         // invoke phantomjs, chrome & chrome canary ...
-        browser: ['phantomjs', 'chrome', 'ie'],
+        browser: ['phantomjs', 'chrome']
         // generate an html & an jUnit report
-        reporter: ['html', 'junit']
+        //reporter: ['html', 'junit']
       },
       dist: {
         src: ['tests/dalek/*.js']
