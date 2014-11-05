@@ -16,7 +16,8 @@
     "twig/twig": "1.*",
     "twig/extensions": "*",
     "gabordemooij/redbean": "*",
-    "raveren/kint": "dev-master"
+    "raveren/kint": "dev-master",
+    "ezyang/htmlpurifier": "dev-master"
   },
   "config": {
     "preferred-install": "dist"
