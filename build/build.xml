@@ -51,7 +51,7 @@
                 <include name="**/*.php"/>
             </fileset>
 
-            <fileset dir="${project.basedir}/adm">
+            <fileset dir="${project.basedir}/web">
                 <include name="**/*.php"/>
             </fileset>
 
