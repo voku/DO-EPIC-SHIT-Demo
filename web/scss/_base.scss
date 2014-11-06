@@ -59,6 +59,10 @@ h1, h2, h3, h4 {
   height: 550px;
   color: $color_black;
 
+  .tpl_tickets & {
+    height: 270px;
+  }
+
   @media(max-width: $screen-sm-min) {
     height: 265px;
   }

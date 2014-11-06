@@ -4689,6 +4689,8 @@ h1, h2, h3, h4 {
           background-size: cover;
   height: 550px;
   color: black; }
+  .tpl_tickets .masthead {
+    height: 270px; }
   @media (max-width: 768px) {
     .masthead {
       height: 265px; } }
@@ -4981,7 +4983,8 @@ section {
       .my_planHeader a {
         padding: 2px 3px; } }
   .my_planHeader input {
-    max-width: 100%; }
+    max-width: 100%;
+    text-align: center; }
 
 .my_planTitle {
   font-size: 2em;
