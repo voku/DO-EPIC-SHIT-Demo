@@ -6,8 +6,10 @@
   transition: all 0.5s ease-in-out;
 }
 
-.btn,  {
+.btn,
+.btn-primary {
   @extend .btn:link;
+  background: $color_sunglow_approx;
 
   &:active,
   &:focus,

@@ -4811,6 +4811,8 @@ h1, h2, h3, h4 {
      -moz-border-radius-topright: 3px;
           border-top-right-radius: 3px; }
   .scroll-top a {
+    background: #ffd35c;
+    /* The Fallback */
     background: rgba(255, 211, 92, 0.85);
     color: #292c31;
     -webkit-transition: background 0.5s ease-in-out;
@@ -4872,7 +4874,7 @@ section {
 .container .credit {
   margin: 20px 0; }
 
-.btn:link, .btn {
+.btn:link, .btn, .btn-primary {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -4887,12 +4889,14 @@ section {
        -o-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out; }
 
-.btn:active, .btn:focus, .btn:visited, .btn:hover {
-  -webkit-box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.75);
-     -moz-box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.75);
-          box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.75);
-  background: #ffca43;
-  color: #292c31; }
+.btn, .btn-primary {
+  background: #ffd35c; }
+  .btn:active, .btn:focus, .btn:visited, .btn:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:visited, .btn-primary:hover {
+    -webkit-box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.75);
+       -moz-box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.75);
+            box-shadow: 0 1px 1px 0 rgba(50, 50, 50, 0.75);
+    background: #ffca43;
+    color: #292c31; }
 
 .navbar-nav > li > a {
   color: white;

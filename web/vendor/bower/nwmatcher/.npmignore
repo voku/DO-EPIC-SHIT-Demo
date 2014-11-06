@@ -1,0 +1,9 @@
+bin/
+build/
+dist/
+lib/
+test/
+.gitattributes
+.gitignore
+.npmignore
+Makefile

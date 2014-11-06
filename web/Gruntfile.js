@@ -84,7 +84,8 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         src: [
-          'vendor/bower/bootstrap-sass/dist/js/bootstrap.min.js'
+          'vendor/bower/bootstrap-sass/dist/js/bootstrap.min.js',
+          'vendor/modernizr.custom..js'
         ],
         dest: 'js/plugins.js'
       }

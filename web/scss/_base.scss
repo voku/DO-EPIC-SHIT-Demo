@@ -208,7 +208,7 @@ h1, h2, h3, h4 {
   border-top-right-radius: 3px;
 
   a {
-    background: rgba($color_sunglow_approx, 0.85);
+    @include background-opacity($color_sunglow_approx, 0.85);
     color: $color_blackblue;
     transition: background 0.5s ease-in-out;
 
