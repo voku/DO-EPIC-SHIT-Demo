@@ -4,6 +4,28 @@ use Slim\Slim;
 use Slim\Views\TwigExtension;
 use Slim\Middleware;
 
+$purifier = new HTMLPurifier(HTMLPurifier_Config::createDefault());
+
+function clearRequest(&$requestVariable, HTMLPurifier $purifier)
+{
+  foreach ($requestVariable as $key => $value) {
+    if (is_array($requestVariable[$key])) {
+      clearRequest($requestVariable[$key], $purifier);
+    } else {
+      $requestVariable[$key] = $purifier->purify($value);
+    }
+  }
+}
+
+clearRequest($_POST, $purifier);
+clearRequest($_GET, $purifier);
+unset($purifier);
+
+// testing
+//var_dump($_GET);
+//exit();
+
+
 require ROOT . '/app/dbloader.php';
 
 /*
