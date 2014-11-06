@@ -85,7 +85,8 @@ module.exports = function(grunt) {
         },
         src: [
           'vendor/bower/bootstrap-sass/dist/js/bootstrap.min.js',
-          'vendor/modernizr.custom..js'
+          'vendor/bower/magnific-popup/dist/jquery.magnific-popup.min.js',
+          'vendor/modernizr.custom.js'
         ],
         dest: 'js/plugins.js'
       }
