@@ -145,6 +145,21 @@ module.exports = function(grunt) {
       }
     },
 
+    pagespeed: {
+      options: {
+        nokey: true,
+        url: "http://openrheinruhr.suckup.de"
+      },
+      dist: {
+        options: {
+          url: "http://openrheinruhr.suckup.de",
+          locale: "de_DE",
+          strategy: "desktop",
+          threshold: 80
+        }
+      }
+    },
+
     watch: {
 
       twig: {
