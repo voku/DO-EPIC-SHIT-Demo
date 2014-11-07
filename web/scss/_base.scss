@@ -41,6 +41,11 @@ h1, h2, h3, h4 {
   color: $color_blue_cool;
 }
 
+.content-image-small {
+  width: 300px;
+  margin: 0 auto;
+}
+
 .globalWrapper {
   min-height: 100%;
   height: auto !important;

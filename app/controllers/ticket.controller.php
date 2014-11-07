@@ -3,22 +3,10 @@
 // GET routes
 
 $app->get(
-  '/buy_overview', function () use ($app) {
-
-    $tickets = new Model_Ticket();
-    $data = array();
-    $data['tickets'] = $tickets->getAll();
-
-    $app->render('tpl_buy_overview.twig', array('page_template' => 'tpl_buy_overview', 'data' => $data));
-  }
-)->name('tickets');
-
-$app->get(
   '/tickets', function () use ($app) {
     $app->render('tpl_tickets.twig', array('page_template' => 'tpl_tickets'));
   }
 )->name('tickets');
-
 
 $app->get(
   '/tickets/:plan+', function ($plan) use ($app) {
