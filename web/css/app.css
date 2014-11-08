@@ -4716,12 +4716,12 @@ h1, h2, h3, h4 {
     font-size: 60px; }
     .masthead h1 a {
       color: #ff6f47;
-      -webkit-transition: all 0.5s ease-in-out;
-         -moz-transition: all 0.5s ease-in-out;
-           -o-transition: all 0.5s ease-in-out;
-              transition: all 0.5s ease-in-out; }
+      -webkit-transition: color 0.5s ease-in-out;
+         -moz-transition: color 0.5s ease-in-out;
+           -o-transition: color 0.5s ease-in-out;
+              transition: color 0.5s ease-in-out; }
       .masthead h1 a:hover {
-        color: #ff5b2e; }
+        color: #ff4715; }
     @media (max-width: 768px) {
       .masthead h1 {
         font-size: 40px; } }

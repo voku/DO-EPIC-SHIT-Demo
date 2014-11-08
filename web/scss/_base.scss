@@ -89,10 +89,10 @@ h1, h2, h3, h4 {
 
     a {
       color: darken($color_persimmon_approx, 5%);
-      transition: all 0.5s ease-in-out;
+      transition: color 0.5s ease-in-out;
 
       &:hover {
-        color: darken($color_persimmon_approx, 10%);
+        color: darken($color_persimmon_approx, 15%);
       }
     }
 
