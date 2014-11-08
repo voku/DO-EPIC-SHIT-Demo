@@ -3,7 +3,7 @@
 {% block content %}
   <ul>
   {% for ticket in data['tickets'] %}
-    <li>{{ ticket.email }} | {{ ticket.lastname }} {{ ticket.firstname }}</li>
+    <li>{{ ticket.email }} | {{ ticket.lastname }} {{ ticket.firstname }} | {{ ticket.price_total }} €</li>
   {% endfor %}
   </ul>
 {% endblock %}

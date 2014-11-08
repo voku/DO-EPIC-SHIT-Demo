@@ -12,10 +12,14 @@
       <p class="error">{{ flash.error }}</p>
     {% endif %}
 
-    {% include 'inc_plan.twig' %}
     <br /><br />
 
     <form class="form-horizontal" action="/tickets" method="post" enctype="multipart/form-data">
+
+     {% include 'inc_plan.twig' %}
+
+     <br /><br />
+
       <div class="form-group">
         <label class="control-label col-xs-3" for="inputEmail">E-Mail:</label>
 

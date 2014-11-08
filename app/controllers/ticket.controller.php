@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Helper\CalculateTicketPrice;
+
 // GET routes
 
 $app->get(
@@ -18,8 +20,15 @@ $app->get(
 
 // buy
 $app->post(
-  '/tickets', function () use ($app) {
+'/tickets', function () use ($app) {
+
     $tickets = R::dispense('tickets');
+
+    $plan = $_POST['plan'];
+    $calc = new CalculateTicketPrice();
+    foreach ($plan as $yourPlan => $yourCount) {
+      $calc->add($yourPlan, $yourCount);
+    }
 
     $ticketsPost = $app->request->post('ticket');
     $tickets->email = $ticketsPost['email'];
@@ -32,6 +41,11 @@ $app->post(
     $tickets->address = $ticketsPost['address'];
     $tickets->zip = $ticketsPost['zip'];
     $tickets->ip = $app->request->getIp();
+    $tickets->plan1 = $plan[1];
+    $tickets->plan2 = $plan[2];
+    $tickets->plan3 = $plan[3];
+    $tickets->plan4 = $plan[4];
+    $tickets->price_total = $calc->getPrice();
 
     // start transaction
     R::begin();
