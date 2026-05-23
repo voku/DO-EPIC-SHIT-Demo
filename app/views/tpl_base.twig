@@ -16,11 +16,14 @@
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
   {% endblock %}
 
   {# CSS #}
   {% block head_css %}
-    <link rel="stylesheet" href="/vendor/bower/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css-min/app.css">
   {% endblock %}
 
@@ -100,7 +103,7 @@
 
 <div class="footer">
   <div class="container">
-    <p class="text-muted">BY <a target="_blank" href="http://moelleken.org/">LARS MOELLEKEN</a> WITH <span class="font-color-red">❤</span> IN 2014</p>
+    <p class="text-muted">BY <a target="_blank" rel="noopener noreferrer" href="https://moelleken.org/">LARS MOELLEKEN</a> WITH <span class="font-color-red">❤</span> IN 2014</p>
   </div>
 </div>
 
@@ -110,8 +113,7 @@
 
 {# JavaScript #}
 {% block footer_js %}
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="vendor/bower/jquery/dist/jquery.min.js"><\/script>')</script>
+  <script src="/js-min/jquery.min.js"></script>
 
   <script>
     // Avoid `console` errors in browsers that lack a console.
@@ -136,37 +138,6 @@
         }
       }
     }());
-  </script>
-
-  <script src="/vendor/modernizr.custom.js"></script>
-
-  <!--[if lt IE 9]>
-  <script src="/vendor/bower/nwmatcher/src/nwmatcher.js"></script>
-  <script src="/vendor/bower/selectivizr/selectivizr.js"></script>
-  <![endif]-->
-
-  <script>
-    Modernizr.load(
-      {
-        test : Modernizr.mq('only all'),
-        nope : '/vendor/bower/respond/dest/respond.min.js'
-      }
-      ,
-      {
-        test: Modernizr.cssremunit,
-        nope : '/vendor/bower/rem-unit-polyfill/js/rem.min.js'
-      }
-    );
-  </script>
-
-  <!-- load web-fonts -->
-  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-  <script>
-    WebFont.load({
-      google: {
-        families: ['Open Sans']
-      }
-    });
   </script>
 
   <script src="/js-min/plugins.js"></script>

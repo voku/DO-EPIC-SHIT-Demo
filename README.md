@@ -1,76 +1,81 @@
-DO-EPIC-SHIT (Slim + Twig + Redbean)
-======================================================
+# DO-EPIC-SHIT Demo
 
-Demo: Open Source Workflow für Webdeveloper (OpenRheinRuhr 2014)
+Refreshed OpenRheinRuhr demo app running on a modern 2026-ready toolchain while keeping the original Slim + Twig + RedBean structure intact.
 
-======================================================
+## Stack
 
-* **Controller/Routing**: Slim ([codeguy/Slim](https://github.com/codeguy/Slim))
-* **Model/Persistence/ORM**: RedBean ([gabordemooij/redbean](https://github.com/gabordemooij/redbean))
-* **View/Template**: Twig ([fabpot/Twig](https://github.com/fabpot/Twig))
-* **UI Toolkit**: Twitter Bootstrap ([twitter/bootstrap](https://github.com/twitter/bootstrap))
+- PHP 8.3+
+- Composer 2
+- Slim 2
+- Twig
+- RedBeanPHP
+- Node.js 20+ / npm 11+
+- Sass + PostCSS + Terser asset pipeline
 
+## Quick start
 
-## Installation
+```bash
+git clone https://github.com/voku/DO-EPIC-SHIT-Demo.git
+cd DO-EPIC-SHIT-Demo
+composer install
+cd web
+npm install
+npm run build
+cd ..
+composer test
+```
 
-The instructions below assume you are running a **LAMP** stack in Ubuntu or any other **apt**-based distributions. To allow Slim to route with clean path syntax, you need to enable the url rewrite module.   
+## Local requirements
 
-	sudo a2enmod rewrite
-	sudo service apache2 restart
+- Apache (or another web server) pointed at `/web`
+- `mod_rewrite` enabled when using Apache
+- SQLite support enabled for PHP (`pdo_sqlite`)
 
-Optionally, if you want to run this demo with the default SQLite database, you need the driver
+Example on Ubuntu/Debian:
 
-	sudo apt-get install php5-sqlite
+```bash
+sudo a2enmod rewrite
+sudo apt-get install php8.3-sqlite3
+sudo service apache2 restart
+```
 
-Suppose your document root is in /var/www, clone the repository as follows:
+The demo stores its sample SQLite database in `app/storage/db/test.s3db`.
 
-	cd /var/www
-	git clone https://github.com/voku/DO-EPIC-SHIT DO-EPIC-SHIT
+## Project layout
 
-The required vendor libraries can be installed/updated using [Composer](http://getcomposer.org/). Go to the project root (where you see the file *composer.json*) and run the following command:
+- `app/` application code, config, controllers, models, and Twig templates
+- `build/` PHPUnit configuration
+- `tests/` automated PHP tests
+- `web/` public entrypoint and compiled frontend assets
 
-	cd ./DO-EPIC-SHIT
-	composer install
+## Frontend workflow
 
-There are some directories should be made writeable to your web server process. 
+All frontend dependencies now come from npm. Bower, Compass, and the legacy Grunt pipeline are gone.
 
-	chmod -R 777 ./app/storage
+```bash
+cd web
+npm run build
+```
 
-Then, update your apache config file to set your document root to the **web** subdirectory. This helps to secure your scripts which should normally be put inside the **app/** folder.
+This rebuilds:
 
-	<VirtualHost *:80>
-		DocumentRoot /var/www/DO-EPIC-SHIT/web
-		ServerName DO-EPIC-SHIT.example.com
-	</VirtualHost>
+- `web/css/app.css`
+- `web/css-min/app.css`
+- `web/css/font-awesome.min.css`
+- `web/js-min/jquery.min.js`
+- `web/js-min/plugins.js`
+- `web/js-min/app.js`
 
-Note that in order to make the *.htaccess* effective, your main apache config file must allow subdirectory to override it.  
+## Writable paths
 
-	<Directory "/var/www">
-		AllowOverride All
-	</Directory>
-
-
-##Structure
-
-* **app/** contains all files for your app: `models/`, `controllers/`, `views/` (Twig templates) and your `config/` (configuration). Slim is instantiated in `app/start.php`
-* **vendor/** contains the libraries for your application, and you can update them with composer.
-* **web/** is for your assets: js/css/img files. It should be the only folder publically available so your domain should point to this folder. `web/index.php` bootstraps the rest of the application.
-
-
-##Writable Directory
-
-* **app/storage/db/** contains SQLite database file.
-* **app/storage/cache/twig/** contains the twig template cache.
-* **app/storage/logs/** contains the error logs.
-
+- `app/storage/db/`
+- `app/storage/cache/twig/`
+- `app/storage/logs/`
 
 ## Credits
 
-This project is inspired from [Tieno/SlimPackage](https://github.com/Tieno/SlimPackage/) and [briankiewel/pagodabox-laravel-4](https://github.com/briankiewel/pagodabox-laravel-4).
-
+Inspired by [Tieno/SlimPackage](https://github.com/Tieno/SlimPackage/) and [briankiewel/pagodabox-laravel-4](https://github.com/briankiewel/pagodabox-laravel-4).
 
 ## License
 
-Software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-
-----------
+Software licensed under the [MIT license](https://opensource.org/licenses/MIT).

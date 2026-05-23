@@ -1,5 +1,7 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Created by PhpStorm.
  * User: menadwork-user
@@ -7,7 +9,7 @@
  * Time: 01:25
  */
 
-class ExmapleTest extends PHPUnit_Framework_TestCase
+class ExmapleTest extends TestCase
 {
 
   /**
@@ -30,8 +32,9 @@ class ExmapleTest extends PHPUnit_Framework_TestCase
    * Sets up the fixture, for example, opens a network connection.
    * This method is called before a test is executed.
    */
-  protected function setUp()
+  protected function setUp(): void
   {
+    parent::setUp();
     $this->tickets = new Model_Ticket();
   }
 
@@ -39,8 +42,9 @@ class ExmapleTest extends PHPUnit_Framework_TestCase
    * Tears down the fixture, for example, closes a network connection.
    * This method is called after a test is executed.
    */
-  protected function tearDown()
+  protected function tearDown(): void
   {
+    parent::tearDown();
   }
 
 }

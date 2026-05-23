@@ -29,10 +29,10 @@ $(document).ready(function () {
 
   // append the map
   $('#map-canvas--js').append(
-    '<object data="http://www.openstreetmap.org/export/embed.html?bbox=6.84631,51.47322,6.85432,51.47813&layer=mapnik&marker=51.47569,6.85032" type="text/html" style="width: 100%; height: 100%;"></object>' +
+    '<object data="https://www.openstreetmap.org/export/embed.html?bbox=6.84631,51.47322,6.85432,51.47813&layer=mapnik&marker=51.47569,6.85032" type="text/html" style="width: 100%; height: 100%;"></object>' +
     '<br />' +
     '<small>' +
-    '<a target="_blank" href="http://www.openstreetmap.org/?lat=51.475675&lon=6.850315&zoom=17&layers=B000FTFTT&mlat=51.47569&mlon=6.85032">Grö&szlig;ere Karte anzeigen</a>' +
+    '<a target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/?lat=51.475675&lon=6.850315&zoom=17&layers=B000FTFTT&mlat=51.47569&mlon=6.85032">Grö&szlig;ere Karte anzeigen</a>' +
     '</small>'
   );
   
@@ -59,7 +59,7 @@ $(document).ready(function () {
     image: {
       verticalFit: true,
       titleSrc: function(item) {
-        return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+        return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank" rel="noopener noreferrer">image source</a>';
       }
     },
     zoom: {

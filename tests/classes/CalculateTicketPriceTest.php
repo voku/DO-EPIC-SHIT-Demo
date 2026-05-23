@@ -1,5 +1,7 @@
 <?php
+
 use MyApp\Helper\CalculateTicketPrice;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Created by PhpStorm.
@@ -8,15 +10,17 @@ use MyApp\Helper\CalculateTicketPrice;
  * Time: 01:40
  */
 
-class CalculateTicketPriceTest extends PHPUnit_Framework_TestCase {
+class CalculateTicketPriceTest extends TestCase
+{
 
   /**
    * @var CalculateTicketPrice
    */
   protected $calc;
 
-  public function __construct()
+  protected function setUp(): void
   {
+    parent::setUp();
     $this->calc = new CalculateTicketPrice();
   }
 

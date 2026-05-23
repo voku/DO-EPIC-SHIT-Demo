@@ -1,18 +1,20 @@
-<phpunit bootstrap="../tests/bootstrap.php">
-    <testsuite name="Model Test Suite">
-        <directory>../tests/classes</directory>
-    </testsuite>
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    bootstrap="../tests/bootstrap.php"
+    cacheDirectory="../.phpunit.cache"
+    colors="true"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+>
+    <testsuites>
+        <testsuite name="Model Test Suite">
+            <directory>../tests/classes</directory>
+        </testsuite>
+    </testsuites>
 
-    <logging>
-        <log type="coverage-html" target="coverage" title="maw-cms" charset="UTF-8" yui="true" highlight="true"
-             lowUpperBound="35" highLowerBound="70"/>
-        <log type="coverage-clover" target="logs/clover.xml"/>
-        <log type="junit" target="junit.xml" logIncompleteSkipped="false"/>
-    </logging>
-
-    <filter>
-        <blacklist>
+    <source>
+        <exclude>
             <directory>../vendor</directory>
-        </blacklist>
-    </filter>
+        </exclude>
+    </source>
 </phpunit>
