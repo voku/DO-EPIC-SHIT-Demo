@@ -1,4 +1,6 @@
 
+.btn,
+.btn-primary,
 .btn:link {
   border-radius: 3px;
   background: $color_sunglow_approx linear-gradient(to bottom, $color_sunglow_approx, darken($color_sunglow_approx, 20%));
@@ -8,7 +10,6 @@
 
 .btn,
 .btn-primary {
-  @extend .btn:link;
   background: $color_sunglow_approx;
 
   &:active,

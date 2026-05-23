@@ -17,7 +17,7 @@
     "slim/extras": "^2.0.3",
     "slim/slim": "^2.6.3",
     "slim/views": "^0.1.3",
-    "twig/twig": "^1.44.8"
+    "twig/twig": "^3.26"
   },
   "require-dev": {
     "phpunit/phpunit": "^11.5"
