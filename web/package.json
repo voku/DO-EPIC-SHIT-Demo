@@ -11,7 +11,7 @@
   "scripts": {
     "clean": "shx rm -f css/*.css css/*.css.map css-min/* js/plugins.js js-min/*",
     "build:assets": "shx mkdir -p css css-min js-min fonts && shx cp node_modules/font-awesome/css/font-awesome.min.css css/font-awesome.min.css && shx cp node_modules/jquery/dist/jquery.min.js js-min/jquery.min.js && shx cp -r node_modules/bootstrap-sass/assets/fonts/bootstrap/* fonts/ && shx cp -r node_modules/font-awesome/fonts/* fonts/",
-    "build:css:sass": "sass --no-source-map --style=expanded --load-path=node_modules/bootstrap-sass/assets/stylesheets scss/app.scss css/app.css",
+    "build:css:sass": "sass --quiet-deps --silence-deprecation=import,global-builtin,color-functions,slash-div --no-source-map --style=expanded --load-path=node_modules/bootstrap-sass/assets/stylesheets scss/app.scss css/app.css",
     "build:css:prefix": "postcss css/app.css --use autoprefixer --replace",
     "build:css:min": "cleancss -o css-min/app.css css/app.css",
     "build:js:plugins": "concat -f node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js node_modules/magnific-popup/dist/jquery.magnific-popup.min.js -o js/plugins.js",
